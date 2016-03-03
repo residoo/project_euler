@@ -21,9 +21,12 @@ import math
 def find_prime(num):
 	isPrime = True
 
-	if num > 1:	
-		for i to range(2,num):
-			if num % i == 0:
+	if num % 1000 == 0:
+		print "So far: " + str(num)
+	
+	if num > 1:
+		for i in range(2,int(num ** 0.5)):		# <--- VITAL. Otherwise it takes too damn long.
+			if (num % i) == 0:
 				isPrime = False
 				break
 	
@@ -38,15 +41,20 @@ num = 1
 
 bigassnumber = 600851475143
 ceiling = int(math.sqrt(bigassnumber))					# We don't need to check higher than this, right?
-print "Ceiling: " + ceiling
+print "Ceiling: " + str(ceiling)
 
-for i to range(2,ceiling):
+for i in range(2,ceiling):
 	num += 1
 	if i < ceiling:
 		if find_prime(num):
 			primes.append(num)	
-			print num,
+			#print num,
 
 print "We've found all the primes. Yay us."
 
-print "Number of prime numbers: " + len(primes)
+print "Number of prime numbers: " + str(len(primes))
+
+for i in range(1,len(primes)):
+	if bigassnumber % primes[len(primes)-i] == 0:
+		print "Solution :" + str(primes[len(primes)-i])
+		break

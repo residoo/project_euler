@@ -16,4 +16,4 @@ while number < 1000:
 		print sum
 	number += 1
   
-print "Final sum: " + sum
+print "Final sum: " + str(sum)

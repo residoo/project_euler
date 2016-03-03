@@ -28,4 +28,4 @@ while term1 < 4000000:
   print term1,
   
 print
-print "Final sum: " + sum
+print "Final sum: " + str(sum)
