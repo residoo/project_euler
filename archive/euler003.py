@@ -1,4 +1,4 @@
-# euler3.py
+# euler003.py
 # https://projecteuler.net/problem=3
 
 """
@@ -25,7 +25,7 @@ def find_prime(num):
 		print "So far: " + str(num)
 	
 	if num > 1:
-		for i in range(2,int(num ** 0.5)):		# <--- VITAL. Otherwise it takes too damn long.
+		for i in range(2,num):		# <--- VITAL. Otherwise it takes too damn long.
 			if (num % i) == 0:
 				isPrime = False
 				break
@@ -43,6 +43,8 @@ bigassnumber = 600851475143
 ceiling = int(math.sqrt(bigassnumber))					# We don't need to check higher than this, right?
 print "Ceiling: " + str(ceiling)
 
+#ceiling = 20
+
 for i in range(2,ceiling):
 	num += 1
 	if i < ceiling:
@@ -53,6 +55,7 @@ for i in range(2,ceiling):
 print "We've found all the primes. Yay us."
 
 print "Number of prime numbers: " + str(len(primes))
+print primes
 
 for i in range(1,len(primes)):
 	if bigassnumber % primes[len(primes)-i] == 0:

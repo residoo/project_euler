@@ -1,4 +1,4 @@
-# euler1.py
+# euler001.py
 # https://projecteuler.net/problem=1
 
 """
